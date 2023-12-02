@@ -8,14 +8,13 @@ res.json({message:"api working successfully"})
 
 //to fetch the film list 
 Router.post("/getfilms", async (req, res) => {
-  console.log(process.env.API_KEY)
   const params = req.body.searchParams;//For Advance Filter
   const options = {
     method: 'GET',
     url: 'https://ott-details.p.rapidapi.com/advancedsearch',
     params,
     headers: {
-      'X-RapidAPI-Key': process.env.API_KEY,
+      'X-RapidAPI-Key':'056b2928bbmshcada2bd4aee0a7ap1cde88jsnf60383ba1a6c',
       'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
     }
   };
