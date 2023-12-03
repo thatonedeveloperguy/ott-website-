@@ -65,11 +65,13 @@ const Movies = ({ hidesearch }) => {
             },
           }
         ).then((res) => {
-          console.log(res);
-          Setmovies(res.data.data);
-          Setmoviescopy(res.data.data);
+          console.log('movies',res);
+          debugger
+          let movieresponse=res?.data?.data
+          Setmovies(movieresponse?.[0]?movieresponse:[]);
+          Setmoviescopy(movieresponse?.[0]?movieresponse:[]);
         })
-        .catch((err) => {});
+        .catch((err) => {console.error(err);Setmovies([])});
     } catch (error) {
       console.log(error);
     }
@@ -224,7 +226,7 @@ const Movies = ({ hidesearch }) => {
 
         <div className="container">
           <main className="card-container row">
-            {movies &&
+            {movies?.length>0 ?
               movies.map((movie, index) => (
                 <div key={index} className=" col-md-3 ">
                   <div className="moviecard">
@@ -257,7 +259,7 @@ const Movies = ({ hidesearch }) => {
                     </div>
                   </div>
                 </div>
-              ))}
+              )):<div style={hidesearch?{backgroundColor:"inherit"}:{}} className="no_movie_card"><div> oops! ,No movies found </div></div>}
           </main>
         </div>
       </div>

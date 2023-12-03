@@ -745,3 +745,34 @@ font-size: 14px;
 
 
 }
+
+.no_movie_card{
+  position: absolute;
+  display: flex;
+  top: 40%;
+  /* background-color: inherit; */
+  left: 42%;
+  background: #171d37;
+  width: 400px;
+  height: 160px;
+  border: 5px solid #243964;
+  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  animation: floatAnimation 1s infinite alternate ease-in-out; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.no_movie_card div{
+  position: relative;
+  bottom: 5px;
+  color: #e1e6f0;
+}
+
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px); 
+  }
+}
