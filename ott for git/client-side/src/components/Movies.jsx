@@ -85,13 +85,9 @@ const Movies = ({ hidesearch }) => {
           return titleloader.push(movie.title);
         }
       });
-      console.warn(filteredOptions);
-
       setOptions(titleloader);
       Setmovies(filteredOptions);
-    } else {
-      setOptions([]);
-    }
+    } 
   };
 
   const handleImageError = (e) => {
@@ -102,7 +98,7 @@ const Movies = ({ hidesearch }) => {
   return (
     <>
       <div className="movies">
-        {!hidesearch ? (//conditional rendering To Activate and Deactivate Search and Filter options
+        {!hidesearch ? (//Conditional rendering To Activate and Deactivate Search and Filter options
           <div className="mb-5">
          <div className="container">
             <div className="pt20">
@@ -114,10 +110,9 @@ const Movies = ({ hidesearch }) => {
                 inputValue={inputValue}
                 onInputChange={(event, newInputValue) => {
                   setInputValue(newInputValue);
-
                   if (newInputValue) {
                     handleMovieList(event, newInputValue);
-                  } else setOptions([""]);
+                  }else Setmovies(moviescopy)
                 }}
                 id="controllable-states-demo"
                 options={options}
@@ -191,6 +186,15 @@ const Movies = ({ hidesearch }) => {
                       ))}
                     </select>
                   </label>
+                  <label>
+                  Language: 
+                  </label>
+                   <input 
+                   placeholder="english,tamil"
+                    name="language"
+                    value={searchParams.language}
+                    onChange={handleInputChange}
+                  />
                 </div>
               )}
               <div className="col-md-2 displayFlex filter_btn">

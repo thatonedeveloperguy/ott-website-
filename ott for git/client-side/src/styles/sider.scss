@@ -94,3 +94,12 @@
     margin-right: 5px;
     cursor: pointer;
 }
+.siderItem:hover .fa{
+    text-shadow: 4px 4px 20px rgb(46, 252, 255);
+    transition: 0.3s ease-in-out;
+}
+.siderItem:hover .title{
+    text-shadow: 4px 4px 20px rgb(46, 252, 255);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
