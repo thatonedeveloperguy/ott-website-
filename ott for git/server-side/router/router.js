@@ -14,7 +14,7 @@ Router.post("/getfilms", async (req, res) => {
     url: 'https://ott-details.p.rapidapi.com/advancedsearch',
     params,
     headers: {
-      'X-RapidAPI-Key':'056b2928bbmshcada2bd4aee0a7ap1cde88jsnf60383ba1a6c',
+      'X-RapidAPI-Key':'1d1213313amshcb9f3ab29d78f88p102c7cjsn4ada732e7081',
       'X-RapidAPI-Host': 'ott-details.p.rapidapi.com'
     }
   };
